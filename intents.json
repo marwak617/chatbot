@@ -1,0 +1,148 @@
+{
+    "intents": [
+        {
+            "tag": "program",
+            "patterns": [
+                "Quel est le programme de l'ENSA de Berrechid?",
+                "Pouvez-vous me parler du programme?",
+                "Quels sont les modules enseignés?",
+                "Programme académique de l'ENSA?"
+            ],
+            "responses": [
+                "Le programme de l'ENSA de Berrechid comprend des cours en mathématiques, informatique, génie électrique et bien d'autres spécialités. Voulez-vous des détails sur une filière spécifique?",
+                "Le programme varie selon les années et les filières. Consultez le site officiel pour plus d'informations détaillées."
+            ]
+        },
+        {
+            "tag": "schedule",
+            "patterns": [
+                "Quel est l'emploi du temps?",
+                "Avez-vous l'emploi du temps des cours?",
+                "Comment est organisé l'emploi du temps à l'ENSA?",
+                "Quand ont lieu les cours?"
+            ],
+            "responses": [
+                "L'emploi du temps dépend des filières et des niveaux. Généralement, les cours ont lieu du lundi au vendredi, avec des créneaux matinaux et après-midi.",
+                "Pour un emploi du temps précis, contactez l'administration ou consultez la plateforme dédiée des étudiants."
+            ]
+        },
+        {
+            "tag": "filières",
+            "patterns": [
+                "Quelles sont les filières proposées à l'ENSA de Berrechid?",
+                "Quels domaines d'études sont disponibles?",
+                "Quels sont les choix de spécialisation?",
+                "Pouvez-vous me parler des filières?"
+            ],
+            "responses": [
+                "L'ENSA de Berrechid propose des filières comme Génie Informatique, Génie Électrique, Génie Industriel, etc.",
+                "Les filières disponibles sont variées et adaptées aux besoins du marché. Souhaitez-vous des détails sur une filière spécifique?",
+                "Les filières disponibles à l'ENSA de Berrechid sont: Ingénierie des systèmes d'infomation et Big Data, Ingénierie Aéronautique, Génie Informatique, Industriel et logistique, mécatronique et inelligence artificielle"
+            ]
+        },
+        {
+            "tag": "orientation",
+            "patterns": [
+                "Comment puis-je m'orienter vers l'ENSA?",
+                "Quels sont les critères d'admission?",
+                "Comment fonctionne l'orientation à l'ENSA?",
+                "Que faut-il pour intégrer l'école?"
+            ],
+            "responses": [
+                "Pour intégrer l'ENSA de Berrechid, vous devez réussir le concours national d'accès après les classes préparatoires ou les admissions parallèles.",
+                "L'orientation dépend de vos résultats et de votre parcours académique. Consultez le site de l'ENSA pour des détails sur les modalités d'admission.",
+                "L'orientation dépend de votre parcours , vous pouvez accéder à l'ENSA soit après le Bac si vous avez une note supérieur ou égal à 15 pour sciences physiques, supérieur ou égal à 12 pour sciences mathématiques et supérieur ou égal à 18 si vous sciences de la vie et la terre.",
+                "vous pouvez accéder après une license professionnelle, un DUT ou DEUG ou après deux années préparatoires intégrées."
+            ]
+        },
+        {
+            "tag": "clubs",
+            "patterns": [
+                "Y a-t-il des clubs à l'ENSA?",
+                "Quelles sont les activités parascolaires?",
+                "Quels clubs sont disponibles pour les étudiants?",
+                "Comment rejoindre un club étudiant?"
+            ],
+            "responses": [
+                "Oui! Vous pouvez rejoindre le Club Robotique, InnovTech, ou participer aux activités sportives. Consultez l'administration pour plus d'informations.",
+                "L'ENSA propose divers clubs et associations. Une liste complète est disponible sur les panneaux d'affichage de l'école."
+            ]
+        },
+        {
+            "tag": "housing",
+            "patterns": [
+                "Y a-t-il un campus pour les étudiants?",
+                "Quels sont les logements disponibles à proximité?",
+                "Où peuvent loger les étudiants?"
+            ],
+            "responses": [
+                "L'ENSA ne dispose pas d'une résidence universitaire .",
+                "Il n'y a pas une résidence universitaire à l'ENSA de Berrechid"
+            ]
+        },
+        {
+            "tag": "partnerships",
+            "patterns": [
+                "Quels sont les partenariats de l'ENSA?",
+                "Est-ce que l'ENSA aide pour les stages?",
+                "Quels sont les débouchés après l'ENSA?"
+            ],
+            "responses": [
+                "L'ENSA collabore avec plusieurs entreprises nationales et internationales, facilitant les stages et l'insertion professionnelle.",
+                "Pour plus de détails sur les partenariats, consultez le site officiel ou contactez le bureau des stages."
+            ]
+        },
+        {
+            "tag": "greetings",
+            "patterns": [
+                "Bonjour",
+                "Salut",
+                "Hello",
+                "Bonsoir"
+            ],
+            "responses": [
+                "Bonjour! Comment puis-je vous aider à propos de l'ENSA de Berrechid?",
+                "Salut! Je suis là pour répondre à vos questions sur l'ENSA de Berrechid."
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Merci, au revoir",
+                "À bientôt",
+                "Bye",
+                "Au revoir"
+            ],
+            "responses": [
+                "Au revoir, et bonne chance pour votre parcours!",
+                "À bientôt! N'hésitez pas à revenir pour d'autres questions."
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Merci",
+                "Je vous remercie",
+                "C'était utile"
+            ],
+            "responses": [
+                "Avec plaisir!",
+                "Je suis content de pouvoir vous aider.",
+                "N'hésitez pas à poser d'autres questions."
+            ]
+        },
+        {
+            "tag": "unknown",
+            "patterns": [
+                "Je ne comprends pas",
+                "Pouvez-vous répéter?",
+                "Ce n'est pas clair"
+            ],
+            "responses": [
+                "Désolé, je ne suis pas sûr de comprendre. Pouvez-vous reformuler?",
+                "Je ne connais pas la réponse pour l'instant. Vous pouvez contacter l'administration pour plus d'informations.",
+                "Vous pouvez contacter ENSA de Berrechid pour plus d'information via ensa.etudes@uhp.ac.ma"
+            ]
+        }
+    ]
+}

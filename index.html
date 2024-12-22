@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        /* Ajout des styles pour aligner l'image avec le titre */
+        .chat-container h2 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .chat-container h2 img {
+            width: 40px;  /* Ajuster la taille de l'image */
+            height: auto;
+            margin-right: 10px;  /* Espacement entre l'image et le texte */
+        }
+        #chatbox {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .user-message, .bot-message {
+            margin: 10px 0;
+        }
+        .user-message {
+            text-align: right;
+            color:#333;
+            background-color: #ADD8E6;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .bot-message {
+            text-align: left;
+            color: #333;
+            background-color: #5DADE2;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #ADD8E6;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <h2>
+            <img src="{{ url_for('static', filename='images/R.jpeg') }}" alt="Chatbot Image">
+
+ <!-- Lien vers l'image -->
+            ChatENSAB
+        </h2>
+        <div id="chatbox"></div>
+        <input type="text" id="userInput" placeholder="Tapez votre message ici...">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value;
+            const chatbox = document.getElementById('chatbox');
+
+            if (userInput.trim() === "") return;
+
+            // Afficher le message de l'utilisateur
+            chatbox.innerHTML += `<div class="user-message">${userInput}</div>`;
+
+            // Vider l'input
+            document.getElementById('userInput').value = "";
+
+            // Scroll vers le bas du chat
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            // Envoyer la requête au serveur Flask
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ sentence: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const botResponse = document.createElement('div');
+                botResponse.classList.add('bot-message');
+                botResponse.innerHTML = data.response;  // Afficher la réponse du chatbot
+                chatbox.appendChild(botResponse);
+                chatbox.scrollTop = chatbox.scrollHeight;
+            })
+            .catch(error => console.log('Erreur:', error));
+        }
+    </script>
+
+</body>
+</html>
